@@ -1,4 +1,16 @@
-List of commands:
+# Phylogenetic networks analysis of COVID19
+
+## Getting covid data
+https://www.cogconsortium.uk/data/
+```
+brew install wget
+wget https://cog-uk.s3.climb.ac.uk/2020-05-08/cog_2020-05-08_sequences.fasta
+wget https://cog-uk.s3.climb.ac.uk/2020-05-08/cog_2020-05-08_alignment.fasta
+wget https://cog-uk.s3.climb.ac.uk/2020-05-08/cog_2020-05-08_metadata.csv
+wget https://cog-uk.s3.climb.ac.uk/2020-05-08/cog_global_2020-05-08_tree.newick
+```
+
+## List of commands to MDL
 
 1. Renamed `cog_2020-05-08_sequences.fasta` to `sequences.fasta`
 2. Chosen 10 sequences into `10.fasta` with a package called [BBMap](https://sourceforge.net/projects/bbmap/)
