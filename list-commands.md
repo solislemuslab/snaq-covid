@@ -96,3 +96,43 @@ Now, we run mdl in the original alignments:
 ```shell
 ../scripts/TICR/scripts/mdl.pl covid-genomes/cog-updated-alignments.fasta -b 100 -o cog
 ```
+I write some Python code to extract specific number of alignments(1000) from the fasta file "alignment.fasta" which is the whole alignments file.
+The new file called try.fasta.
+```
+fasta = open("alignment.fasta","rt")
+count = 0
+symbol = ">"
+lines = fasta.readlines()
+new = open("try.fasta", "w")
+content = lines[10000:11001]
+count = 0
+for line in content:
+    new.write(line)
+    count+=1
+print(count)
+```
+Then I write command in jupyter notebook for the preparation of MDL
+```
+!PATH=/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/yuzhengzhang/desktop/research/PhyloNetworks.jl.wiki/bucky1/src:/Users/yuzhengzhang/desktop/research/PhyloNetworks.jl.wiki/QMC:/Users/yuzhengzhang/Desktop/Research/PhyloNetworks.jl.wiki/data_results/scripts:/Users/yuzhengzhang/Desktop/Research/PhyloNetworks.jl.wiki/data_results/Covid-19:/Users/yuzhengzhang/Desktop/Research/PhyloNetworks.jl.wiki/MDL
+!sed 's/\//-/g' try.fasta > try-updated.fasta
+!mkdir try
+!cp try-updated.fasta try-updated
+```
+Then I run MDL command
+```
+mdl.pl try-updated.fasta -b 100 -o try
+```
+We still get only 1 partition
+```
+164 total parsimony-informative sites found for 'try-updated.fasta'.
+
+Parsimony analyses will be performed on 3 different blocks.
+
+Job server successfully created.
+
+  Determining commands for each block... done. (0 - 2)
+    Analyses complete: 3/3.
+  All connections closed.
+
+Total execution time: 4 minutes, 27 seconds.
+```
