@@ -136,3 +136,86 @@ Job server successfully created.
 
 Total execution time: 4 minutes, 27 seconds.
 ```
+
+We think there are two possibilities account for this very few number of parsimony sites: problem of MDL or problem of data of COVID_19
+SO I write some python code to compare pairs of alignments in the COVID-19 dataset to identify the difference between two alignments.
+I randomly chooses pairs of alignments and divide them to sections and each section has 100 sites.Then I compare each section of two alignments,
+if two corresponding sections are different, i write sections to two files. Then compare each site in those two files to count the number of different sites and the position of it. I use this way to compare because this way is much faster than the simple compare(compare each site one by one)
+Also, Since "N' is represented as any base, so i did not count those sites as difference sites.(for example, ATAN and ATGA, I count there is only 1 difference site)So, if I do not count "N", there are only about 5-7 different sites of each pair of alignments in my sample file( I chose 1th, 5000th, 8000th, 8500th, 10000th,11015th, 12150th, 13525th alignment).
+```
+compare1 = open("compare1.txt","w")
+content1 = lines[19000:19002]
+compare2 = open("compare2.txt","w")
+content2 = lines[16000:16002]
+for line in content1:
+    compare1.write(line)
+for line in content2:
+    compare2.write(line) 
+    
+compare1 = open("compare1.txt","r")
+compare2 = open("compare2.txt","r")
+compare11 = open("compare11.txt","w")
+compare22 = open("compare22.txt","w")
+content11 = []
+content22 = []
+count = 0
+while 1:
+    compare1_reader = compare1.read(100)
+    compare2_reader = compare2.read(100)
+    if(compare1_reader != compare2_reader):
+        content11.append(compare1_reader)
+        content22.append(compare2_reader)
+        count+=1
+        print(count)
+        print(compare1_reader)
+compare11 = open("compare11.txt","w")
+compare22 = open("compare22.txt","w")
+for line in content11:
+    compare11.write(line)
+for line in content22:
+    compare22.write(line)
+ 
+compare22 = open("compare22.txt","r")
+num = 0
+while 1:
+    num+=1
+    compare11_reader = compare11.read(1)
+    compare22_reader = compare22.read(1)
+    if(compare11_reader != compare22_reader and compare11_reader!="N" and compare22_reader!="N"):
+        print(compare11_reader)
+        print(num)
+```
+Also from https://www.ncbi.nlm.nih.gov/projects/msaviewer/?key=1WZPv8lkFr26Sli6mVtuRD7oyOGXkJmVlZO9hamBu68qnFQ-DARtgFK7Z7jLX5AiwTqcLoIK2Q-eFYoYjB6ABbIsjyKjHok,oRI7y70QYsnOPizO7S8aMEqP4SG-ULBVvFOURYBBkm8DXH3-JcSP47nJjJLbgDv9auU38SnVctA1yiHHJ8Er2hnzJP0IwSI I checked the pattern of our COVID-19 data which have same result with my python result.
+Then I registered the account in GISAID to get another COVID-19 data, and I download the msa file. After randomly choose 10 alignments and run MDL, I find there are also very few number of parsimony informative sites.(1 partition) 
+```
+mdl.pl msa_sample1.fasta -b 100 -sample1
+```
+Then we decide to use pseudomona data instead of COVID-19. I randomly choose 10 alignments in this data set.
+```
+fasta = open("concatenated.fasta","rt")
+count = 0
+symbol = ">"
+lines = fasta.readlines()
+for line in lines:
+        if(line.find(symbol) != -1):
+            print(count)
+            print(line)
+        count+=1
+        
+new = open("sample1.fasta", "w")
+content = lines[0:4]
+content+=lines[20:24]
+content+=lines[50:54]
+content+=lines[60:64]
+content+=lines[84:88]
+count = 0
+for line in content:
+    new.write(line)
+    count+=1
+print(count)
+```
+Then I run the command of MDL
+```
+mdl.pl sample1.fasta -b 100 -o sample1
+```
+I get good results and get good partitions.
