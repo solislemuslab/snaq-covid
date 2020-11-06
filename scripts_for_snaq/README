@@ -1,1 +1,11 @@
-Description of scripts:
+Description of scripts of pipeline:
+1. You are in the folder containning the file of the whole alignments -- Pseudomonas
+2. Extract different sample files using scripts/script-extract.py
+3. Use scripts/script-midsteps.sh to run steps of MDL, MrBayes and Bucky. (usage of this script: sh scripts/script-midsteps.sh sample1)
+Before running this script, you need to create 3 empty folders for output of each step by 
+```
+  mkdir output-MDL
+  mkdir output-MrBayes
+  mkdir output-bucky
+```
+4. Use scripts/script-snaq.jl to rub the step of Snaq
