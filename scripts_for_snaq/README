@@ -4,8 +4,17 @@ Description of scripts of pipeline:
 3. Use scripts/script-midsteps.sh to run steps of MDL, MrBayes and Bucky. (usage of this script: sh scripts/script-midsteps.sh sample1)
 Before running this script, you need to create 3 empty folders for output of each step by 
 ```
-  mkdir output-MDL
+  mkdir output-MDL 
   mkdir output-MrBayes
   mkdir output-bucky
+  module load bucky-1.4.4
+  sh scripts/script-midsteps.sh samplei
+  module load julia-1.5.1
 ```
-4. Use scripts/script-snaq.jl to rub the step of Snaq
+4. Use scripts/script-snaq.jl to run the step of Snaq
+```
+  module load julia-1.5.1
+  mkdir output-snaq
+  julia scripts/scripts-snaq.jl samplei 
+ ```
+ because of the long running time, it is wise to work parallelly
