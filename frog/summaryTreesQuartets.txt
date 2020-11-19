@@ -1,0 +1,17 @@
+data consists of 349 gene trees and 126 4-taxon subsets
+
+ same taxa in gene trees and quartets: ["Neobatrachus_albipes_15803", "Neobatrachus_aquilonius_132170", "Neobatrachus_fulvus_17125", "Neobatrachus_kunapalari_16563", "Neobatrachus_pelobatoides_116515", "Neobatrachus_pictus_15876", "Neobatrachus_sudellae_23945", "Neobatrachus_sutor_15343", "Neobatrachus_wilsmorei_113973"]
+Taxon Neobatrachus_albipes_15803 appears in 349 input trees (100.0 %)
+Taxon Neobatrachus_aquilonius_132170 appears in 349 input trees (100.0 %)
+Taxon Neobatrachus_fulvus_17125 appears in 349 input trees (100.0 %)
+Taxon Neobatrachus_kunapalari_16563 appears in 349 input trees (100.0 %)
+Taxon Neobatrachus_pelobatoides_116515 appears in 349 input trees (100.0 %)
+Taxon Neobatrachus_pictus_15876 appears in 349 input trees (100.0 %)
+Taxon Neobatrachus_sudellae_23945 appears in 349 input trees (100.0 %)
+Taxon Neobatrachus_sutor_15343 appears in 349 input trees (100.0 %)
+Taxon Neobatrachus_wilsmorei_113973 appears in 349 input trees (100.0 %)
+----------------------------
+
+will print below only the 4-taxon subsets with data from <= 70.0% genes
+----------------------------
+

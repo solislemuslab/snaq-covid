@@ -1,0 +1,24 @@
+optimization of topology, BL and inheritance probabilities using:
+ hmax = 1,
+ tolerance parameters: ftolRel=1.0e-6, ftolAbs=1.0e-6,
+                       xtolAbs=0.001, xtolRel=0.01.
+ max number of failed proposals = 75, liktolAbs = 1.0e-6.
+rootname for files: net1
+BEGIN: 10 runs on starting tree ((((Neobatrachus_kunapalari_16563,((Neobatrachus_albipes_15803,(Neobatrachus_sutor_15343,Neobatrachus_wilsmorei_113973):0.6845960441445633):0.018999853933151036,Neobatrachus_pelobatoides_116515):0.17440694149889138):0.5503717533815262,Neobatrachus_pictus_15876):0.47889878355003207,Neobatrachus_sudellae_23945):0.6578829543063244,Neobatrachus_fulvus_17125,Neobatrachus_aquilonius_132170);
+       using 20 processors
+
+main seed 789
+seed: 789 for run 1
+seed: 55484 for run 2
+seed: 94440 for run 3
+seed: 5108 for run 4
+seed: 94157 for run 5
+seed: 69775 for run 6
+seed: 96649 for run 7
+seed: 12752 for run 8
+seed: 46335 for run 9
+seed: 3341 for run 10
+
+2020-11-19 4:44:31.184
+MaxNet is ((((Neobatrachus_pelobatoides_116515,((Neobatrachus_sutor_15343,Neobatrachus_wilsmorei_113973):0.6371587037757782,(Neobatrachus_albipes_15803,(Neobatrachus_kunapalari_16563)#H10:::0.7455310317304219):0.3691130652687055):0.07496731472637007):0.7991966603585016,Neobatrachus_pictus_15876):0.5514964442625705,(Neobatrachus_sudellae_23945,#H10:::0.2544689682695781):0.5039030446360516):0.6417562425913299,Neobatrachus_fulvus_17125,Neobatrachus_aquilonius_132170); 
+with -loglik 60.841941606696096
