@@ -1,5 +1,4 @@
 #!/bin/bash
-PATH=/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/yuzhengzhang/desktop/research/PhyloNetworks.jl.wiki/bucky1/src:/Users/yuzhengzhang/desktop/research/PhyloNetworks.jl.wiki/QMC:/Users/yuzhengzhang/Desktop/Research/PhyloNetworks.jl.wiki/data_results/scripts:/Users/yuzhengzhang/Desktop/Research/PhyloNetworks.jl.wiki/data_results/Covid-19:/Users/yuzhengzhang/Desktop/Research/PhyloNetworks.jl.wiki/MDL:/Users/yuzhengzhang/Desktop/Julia-1.4.app/Contents/Resources/julia/bin
 name="$1"
 mkdir "output-MDL/"$name
 mkdir "output-MrBayes/"$name"-mb"
